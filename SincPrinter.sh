@@ -3,15 +3,15 @@
 ####### Verificação da instalação do CUPS, especialmente o comando 'lp ####### '
 	which lp > /dev/null #procura o diretório do comando 'lp', recebe o código em '$?' e redireciona a saída para não ser impressa na tela      
 	if [ $? -ne 0 ]; then #condicional para verificar se a saída de '$?' obteve êxito 0 ou 1
-       		echo "CUPS não instalado! Instale-o, configure-o e execute novamente" #auxilio para configurar o CUPS
+       	echo "CUPS não instalado! Instale-o, configure-o e execute novamente" #auxilio para configurar o CUPS
 		echo "Abra o navegador e vá a localhost:631 para configurá-lo" #auxilio para configurar o CUPS
 		echo "Seu nome de usuário para login: $(whoami)" #auxilio para configurar o CUPS whoami imprime o nome do usuario
-        	echo "Senha é a mesma de login do usuário do PC" #auxilio para configurar o CUPS
-        	exit 1 #encerra o script caso não encontre o CUPS, comando 'lp'  
+        echo "Senha é a mesma de login do usuário do PC" #auxilio para configurar o CUPS
+        exit 1 #encerra o script caso não encontre o CUPS, comando 'lp'  
         else 
 		echo "Comando lp do CUPS encontrado" #auxilio para configurar o CUPS
 		echo "Abra o navegador e vá a localhost:631 para configurá-lo caso necessário" #auxilio para configurar o CUPS
-            	echo "Seu nome de usuário para login: $(whoami)" #auxilio para configurar o CUPS whoami imprime o nome do usuario
+        echo "Seu nome de usuário para login: $(whoami)" #auxilio para configurar o CUPS whoami imprime o nome do usuario
 		echo "Senha é a mesma de login do usuário do PC" #auxilio para configurar o CUPS
 								echo '' # quebra de linha
 	fi
@@ -26,7 +26,7 @@ impost="$dirSincPrinter/impost" #define que o arquivo impost está na mesma past
 	if [ -f "impost" ]; then
 			echo "Arquivo 'impost' encontrado" #apenas para controle em execucao via terminal
 	else
- 	        	echo "Arquivo 'impost' não encontrado. Criando..." #apenas para controle em execucao via terminal
+ 	        echo "Arquivo 'impost' não encontrado. Criando..." #apenas para controle em execucao via terminal
 			echo "caminhoDownload=$HOME/Downloads" > impost #texto de configuracao do caminho do arquivo SINC.OFE.txt + criacao do arquivo
 			echo 'impressora=""' >> impost #texto de configuracao do nome da impressora
 		                		echo '' >> impost; echo '' >> impost #quebra de linha *2
@@ -34,13 +34,13 @@ impost="$dirSincPrinter/impost" #define que o arquivo impost está na mesma past
 			echo '#Exemplo: caminhoDownload="/home/dante/Downloads"' >> impost #explicação possível erro
 			echo '#Exemplo: impressora="Argox OS 214"' >> impost #explicação possível erro
 								echo ''>> impost # quebra de linha
-                				echo '#Criado por: Dante Giordano' >> impost #creditos
+            echo '#Criado por: Dante Giordano' >> impost #creditos
 			echo "Arquivo 'impost' criado com sucesso" #apenas para controle em execução via terminal
 								echo '' # quebra de linha
 			echo "Preencha o nome da impressora no arquivo 'impost' e execute novamente"
 			echo "Impressoras disponíveis: $(lpstat -v)" #lista as impressoras detectadas para auxiliar
 			exit 0
-fi 
+	fi 
 
 ####### Fim da verificação da existência do arquivo "impost" #######
 
@@ -67,8 +67,8 @@ controllo () {
 
 ####### Verifica se o usuário atribuiu algum valor para a impressora no 'impost' #######
 	if [ "$impressora" = "" ]; then #verifica se a variavel está vazia
- 				echo "Favor configurar o nome da impressora e executar o script novamente" 
-				exit 1 #encerra o script enquanto não possuir texto atribuído
+ 			echo "Favor configurar o nome da impressora e executar o script novamente" 
+			exit 1 #encerra o script enquanto não possuir texto atribuído
 	fi
 
 ####### Loop de execução da função controllo #######
