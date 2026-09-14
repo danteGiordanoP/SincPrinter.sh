@@ -11,6 +11,12 @@ basta ./nomedoarquivo.sh
 
 *O script necessita do CUPS instalado para gerir a impressão
 
+#Versâo 1.1.1#
+
+*Pequena correção de sintaxe
+
+*Todas as alterações anteriores continuam funcionando
+
 #Versâo 1.1#
 
 *Incluída a inicialização automática no código. Defini-la em "Aplicativos Iniciais de Sessão" ou equivalente de sua distribuição
