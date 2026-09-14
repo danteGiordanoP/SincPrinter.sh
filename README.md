@@ -9,5 +9,5 @@ Observações importantes:
 *Mover o arquivo dentro dela
 *Conceder permissão de execução através do terminal com o comando: sudo chmod +x nomedoarquivo.sh
 *Para executar pela priveira vez digitar no terminal: ./caminho/nomedoarquivo.sh  --caso já esteja no diretório basta ./nomedoarquivo.sh
-*Após configurá-lo adicionar para execução automática em "Aplicativos de Sessão" ou "Aplicativos de inicialização"
+*Execução automática ainda não funciona, necessário iniciá-lo pelo terminal
 * O script necessita do CUPS instalado para gerir a impressão
