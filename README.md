@@ -9,10 +9,9 @@ sudo chmod +x nomedoarquivo.sh
 Para executar pela primeira vez, digitar no terminal:
 ./caminho/nomedoarquivo.sh
 
-Caso já esteja no diretório do arquivo, basta executar:
-
-./nomedoarquivo.sh
+Caso já esteja no diretório do arquivo, basta executar: ./nomedoarquivo.sh
 O script necessita do CUPS instalado para gerenciar a impressão.
+
 Versão 1.1.1
 Pequena correção de sintaxe.
 Todas as alterações anteriores continuam funcionando.
