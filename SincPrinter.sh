@@ -8,7 +8,7 @@
 		echo "Seu nome de usuário para login: $(whoami)" #auxilio para configurar o CUPS whoami imprime o nome do usuario
         echo "Senha é a mesma de login do usuário do PC" #auxilio para configurar o CUPS
         exit 1 #encerra o script caso não encontre o CUPS, comando 'lp'  
-        else 
+    else 
 		echo "Comando lp do CUPS encontrado" #auxilio para configurar o CUPS
 		echo "Abra o navegador e vá a localhost:631 para configurá-lo caso necessário" #auxilio para configurar o CUPS
         echo "Seu nome de usuário para login: $(whoami)" #auxilio para configurar o CUPS whoami imprime o nome do usuario
@@ -23,18 +23,18 @@ impost="$dirSincPrinter/impost" #define que o arquivo impost está na mesma past
 
 ####### Verificação do arquivo "impost" necessário para rodar o script #######
 ####### "Impressora" e "caminhoDownload" variáveis carregadas do arquivo "impost" ####### 
-	if [ -f "impost" ]; then
+	if [ -f "$impost" ]; then
 			echo "Arquivo 'impost' encontrado" #apenas para controle em execucao via terminal
 	else
  	        echo "Arquivo 'impost' não encontrado. Criando..." #apenas para controle em execucao via terminal
-			echo "caminhoDownload=$HOME/Downloads" > impost #texto de configuracao do caminho do arquivo SINC.OFE.txt + criacao do arquivo
-			echo 'impressora=""' >> impost #texto de configuracao do nome da impressora
-		                		echo '' >> impost; echo '' >> impost #quebra de linha *2
-			echo '#Caso contenham espaços ou acentos nos nomes colocar os valores entre aspas' >> impost #explicação possível erro
-			echo '#Exemplo: caminhoDownload="/home/dante/Downloads"' >> impost #explicação possível erro
-			echo '#Exemplo: impressora="Argox OS 214"' >> impost #explicação possível erro
-								echo ''>> impost # quebra de linha
-            echo '#Criado por: Dante Giordano' >> impost #creditos
+			echo "caminhoDownload=$HOME/Downloads" > "$impost" #texto de configuracao do caminho do arquivo SINC.OFE.txt + criacao do arquivo
+			echo 'impressora=""' >> "$impost" #texto de configuracao do nome da impressora
+		                		echo '' >> "$impost"; echo '' >> "$impost" #quebra de linha *2
+			echo '#Caso contenham espaços ou acentos nos nomes colocar os valores entre aspas' >> "$impost" #explicação possível erro
+			echo '#Exemplo: caminhoDownload="/home/dante/Downloads"' >> "$impost" #explicação possível erro
+			echo '#Exemplo: impressora="Argox OS 214"' >> "$impost" #explicação possível erro
+								echo ''>> "$impost" # quebra de linha
+            echo '#Criado por: Dante Giordano' >> "$impost" #creditos
 			echo "Arquivo 'impost' criado com sucesso" #apenas para controle em execução via terminal
 								echo '' # quebra de linha
 			echo "Preencha o nome da impressora no arquivo 'impost' e execute novamente"
